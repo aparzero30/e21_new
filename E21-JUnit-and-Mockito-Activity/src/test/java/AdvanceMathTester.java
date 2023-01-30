@@ -55,6 +55,7 @@ public class AdvanceMathTester {
         when(basicMath.multiply(40.0,40.0)).thenReturn((1600.0));
         Assert.assertEquals(advanceMath.squareOfSum(20.0,20.0), 1600.0, 0);
         verify(basicMath, times(2)).add(20.0, 20.0);
+        verify(basicMath, atLeast(2)).add(20.0, 20.0);
         verify(basicMath).multiply(40.0,40.0);
 
 
@@ -141,6 +142,7 @@ public class AdvanceMathTester {
         //then
         Assert.assertEquals(result, 1600.0, 0);
         verify(basicMath, times(2)).add(20.0, 20.0);
+        verify(basicMath, atLeast(2)).add(20.0, 20.0);
         verify(basicMath).multiply(40.0,40.0);
 
     }
